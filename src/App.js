@@ -1,4 +1,5 @@
 import React, { createRef, useState } from 'react';
+import './App.css';
 
 const Item = ( { name, price}) =>(
   <li>{name}, ${price}</li>
@@ -25,6 +26,7 @@ const App = props =>{
   }
   return(
     <div>
+      <h1>Functional Component</h1>
       <ul>
         {items.map(i =>{
           return(
@@ -36,9 +38,19 @@ const App = props =>{
           )
         })}
       </ul>
-      <input type= "text" ref= {nameRef}/><br/>
-      <input type= "text" ref= {priceRef}/><br/>
-      <button onClick = {add}>Add</button>
+      <table>
+        <tbody>
+          <tr>
+            <td><label>Name</label></td>
+            <td><input type= "text" ref= { nameRef}></input></td>
+          </tr>
+          <tr>
+            <td><label>Price</label></td>
+            <td><input type= "text" ref= { priceRef}></input></td>
+          </tr>
+        </tbody>
+      </table>
+      <button onClick= {add}>Add</button>
     </div>
   )
 }
